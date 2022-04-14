@@ -1,0 +1,40 @@
+version: '3'
+services:
+    mongodb:
+      image: mongodb:latest
+      volumes: 
+        - db_data:db/mongodb
+      container_name: mongo_db_container
+      restart: always
+      environment:
+        MONGO_INIT_ROOT_USERNAME: mongodb
+        MONGO_INIT_ROOT_PASSWORD: mongodb
+      ports: 
+      - 27017:27017
+    
+    nginx:
+      image: nginx:latest
+      volumes:
+        - db_data:db/nginx
+      container_name: nginx_container
+      restart: always
+      environment:
+        nginx_INIT_ROOT_USERNAME: nginx
+        nginx_INIT_ROOT_PASSWD: nginx
+      ports: 
+      - 8080:80
+
+    app:
+      image: app_image
+      container_name: app_container
+      restart: always
+      environment:
+        HOST: mongodb
+        USER: mongodb
+        PASSWORD: mongodb
+      ports: 
+        - 27017:27017 
+      depends_on: 
+        - mongodb 
+volumes: 
+  db_data:
