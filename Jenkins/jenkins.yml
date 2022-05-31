@@ -31,18 +31,18 @@ spec:
             limits:
               memory: 2000Mi
               cpu: "750m"     
-        # livenessProbe:
-        #   httpGet:  
-        #     path: "/login"
-        #     port: 8080 
-        #   initialDelaySeconds: 90       
-        #   periodSeconds: 10
-        # readinessProbe:
-        #   httpGet:
-        #     path: "/login"
-        #     port: 8080
-        #   initialDelaySeconds: 90
-        #   periodSeconds: 10       
+        livenessProbe:
+          httpGet:  
+            path: "/login"
+            port: 8080 
+          initialDelaySeconds: 90       
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: "/login"
+            port: 8080
+          initialDelaySeconds: 90
+          periodSeconds: 10       
         volumeMounts:
           - name: jenkins-vol
             mountPath: /var/jenkins_home 
