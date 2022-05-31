@@ -31,22 +31,45 @@ spec:
             limits:
               memory: 2000Mi
               cpu: "750m"     
-        livenessProbe:
-            httpGet:
-              path: /
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            timeoutSeconds: 5
-            failureThreshold: 5
+          livenessProbe:
+          exec:
+            command:
+            - /bin/bash
+            - -ec
+            
+          failureThreshold: 6
+          initialDelaySeconds: 120
+          periodSeconds: 30
+          successThreshold: 1
+          timeoutSeconds: 20  
+
         readinessProbe:
-            httpGet:
-              path: /
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            timeoutSeconds: 5
-            failureThreshold: 3       
+          exec:
+            command:
+            - /bin/bash
+            - -ec
+            
+          failureThreshold: 3
+          initialDelaySeconds: 10
+          periodSeconds: 30
+          successThreshold: 1
+          timeoutSeconds: 20    
+#         livenessProbe:
+#             httpGet:
+#               path: /
+#               port: 80
+#             initialDelaySeconds: 60
+#             periodSeconds: 10
+#             timeoutSeconds: 5
+#             failureThreshold: 5
+#         readinessProbe:
+#             httpGet:
+#               path: /
+#               port: 80
+#             initialDelaySeconds: 60
+#             periodSeconds: 10
+#             timeoutSeconds: 5
+#             failureThreshold: 3       
         volumeMounts:
           - name: jenkins-vol
             mountPath: /var/jenkins_home 
