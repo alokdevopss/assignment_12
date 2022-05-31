@@ -1,8 +1,8 @@
 kind: PersistentVolumeClaim
-    apiVersion: v1
-    metadata:
+apiVersion: v1
+metadata:
       name: rabbit-pvc
-    spec:
+spec:
       accessModes: [ "ReadWriteOnce" ]
       #storageClassName: "gp2"
       resources:
