@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: redis-cluster
+  name: argocd-redis
 data:
   update-node.sh: |
     #!/bin/sh
