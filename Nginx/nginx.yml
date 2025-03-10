@@ -41,11 +41,11 @@ spec:
             periodSeconds: 10
             timeoutSeconds: 5
             failureThreshold: 3         
-        volumeMounts:
-          - name: nginx-vol
-            mountPath: /var/nginx_home 
-      volumes:
-        - name: nginx-vol
-          persistentVolumeClaim:
-            claimName: nginx-pvc
+      #   volumeMounts:
+      #     - name: nginx-vol
+      #       mountPath: /var/nginx_home 
+      # volumes:
+      #   - name: nginx-vol
+      #     persistentVolumeClaim:
+      #       claimName: nginx-pvc
 
