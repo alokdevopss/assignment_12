@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:v0
+        image: nginx:v0.0.03
         ports:
         - containerPort: 80
         resources:     
@@ -29,7 +29,7 @@ spec:
             httpGet:
               path: /
               port: 80
-            initialDelaySeconds: 60
+            initialDelaySeconds: 50
             periodSeconds: 10
             timeoutSeconds: 5
             failureThreshold: 5
