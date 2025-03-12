@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 051826741816.dkr.ecr.ap-south-1.amazonaws.com/test/jenkins:65
+        image: nginx:latest
         ports:
         - containerPort: 80
         resources:     
@@ -29,7 +29,7 @@ spec:
             httpGet:
               path: /
               port: 80
-            initialDelaySeconds: 20
+            initialDelaySeconds: 60
             periodSeconds: 10
             timeoutSeconds: 5
             failureThreshold: 5
