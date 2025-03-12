@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 051826741816.dkr.ecr.ap-south-1.amazonaws.com/test/jenkins:62
+        image: nginx:latest
         ports:
         - containerPort: 80
         resources:     
