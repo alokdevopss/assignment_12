@@ -31,29 +31,29 @@ spec:
             limits:
               memory: 2000Mi
               cpu: "750m"     
-        livenessProbe:
-          exec:
-            command:
-            - /bin/bash
-            - -ec
+        # livenessProbe:
+        #   exec:
+        #     command:
+        #     - /bin/bash
+        #     - -ec
             
-          failureThreshold: 6
-          initialDelaySeconds: 120
-          periodSeconds: 30
-          successThreshold: 1
-          timeoutSeconds: 20  
+        #   failureThreshold: 6
+        #   initialDelaySeconds: 120
+        #   periodSeconds: 30
+        #   successThreshold: 1
+        #   timeoutSeconds: 20  
 
-        readinessProbe:
-          exec:
-            command:
-            - /bin/bash
-            - -ec
+        # readinessProbe:
+        #   exec:
+        #     command:
+        #     - /bin/bash
+        #     - -ec
             
-          failureThreshold: 3
-          initialDelaySeconds: 10
-          periodSeconds: 30
-          successThreshold: 1
-          timeoutSeconds: 20    
+        #   failureThreshold: 3
+        #   initialDelaySeconds: 10
+        #   periodSeconds: 30
+        #   successThreshold: 1
+        #   timeoutSeconds: 20    
 #         livenessProbe:
 #             httpGet:
 #               path: /
